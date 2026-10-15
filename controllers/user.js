@@ -1,4 +1,4 @@
-import User from "../models/user.js";
+import { User } from "../models/User.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 
@@ -60,5 +60,5 @@ export const login = async (req, res) => {
     expiresIn: "1d",
   });
 
-  res.json({ message: `welcome${user.name}`, token, success: true });
+  res.json({ message: `welcome ${user.name}`, token, success: true });
 };
