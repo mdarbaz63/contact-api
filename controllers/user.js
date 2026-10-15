@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken";
 export const register = async (req, res) => {
   const { name, email, password, age } = req.body;
   if (name == "" || email == "" || password == "" || age == "")
-    return req.json({
+    return res.json({
       message: "all field are required",
     });
 
@@ -40,7 +40,7 @@ export const login = async (req, res) => {
   const { email, password } = req.body;
   //validation:-
   if (email == "" || password == "")
-    return req.json({
+    return res.json({
       message: "all fileds are required",
     });
   //cheack email user exits or not
